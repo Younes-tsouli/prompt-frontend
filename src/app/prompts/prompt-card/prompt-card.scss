@@ -1,0 +1,28 @@
+.post {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 2px solid black;
+  padding: 1rem;
+  margin-bottom: 20px;
+}
+.title-area {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  border: 2px solid black;
+  padding: 0 10px;
+  margin-bottom: 10px;
+}
+#prompt {
+  width: 100%;
+}
+.info {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+  margin-top: 10px;
+}
+#vote {
+  font-weight: 600;
+}
