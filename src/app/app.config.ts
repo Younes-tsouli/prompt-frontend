@@ -5,6 +5,7 @@ import Aura from '@primeuix/themes/aura';
 import { routes } from './app.routes';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
 import { definePreset } from '@primeuix/themes';
+import { provideHttpClient, withFetch } from '@angular/common/http';
 
 // On définit ton preset personnalisé ici
 const MyPinkPreset = definePreset(Aura, {
@@ -27,6 +28,9 @@ const MyPinkPreset = definePreset(Aura, {
 
 export const appConfig: ApplicationConfig = {
   providers: [
+    provideHttpClient(
+      withFetch() 
+    ),
     provideBrowserGlobalErrorListeners(),
     provideRouter(routes),
     provideClientHydration(withEventReplay()),
