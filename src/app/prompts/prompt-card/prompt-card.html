@@ -1,21 +1,24 @@
-<div class="post">
-  <div class="title-area">
-    <span>{{ prompt().title }}</span> by {{ prompt().author.username }}
-    <div class="btns">
-      <button (click)="copyToClipboard()">copy</button>
-      <button>edit</button>
-    </div>
-  </div>
-  <textarea readonly id="prompt" rows="8">
-        {{ prompt().content }}
-      </textarea
-  >
-  <div class="info">
-    {{ prompt().category.name }}
+<p-card class="mb-3">
+  <div class="flex justify-content-between align-items-baseline mb-2">
     <div>
-      <button (click)="up()">Up</button>
-      <span id="vote">{{ prompt().score }}</span>
-      <button (click)="down()">Down</button>
+      <h3 class="m-0">{{ prompt().title }}</h3>
+      <p class="text-color-secondary">&#64;{{ prompt().author.username }}</p>
+    </div>
+    <div class="flex gap-2">
+      <p-button icon="pi pi-pencil" size="small" [text]="true" />
+      <p-button icon="pi pi-copy" (onClick)="copyToClipboard()" size="small" [text]="true" />
     </div>
   </div>
-</div>
+  <textarea pTextarea readonly class="w-full mb-2" rows="8">
+        {{ prompt().content }}
+  </textarea>
+
+  <div class="flex justify-content-between">
+    <p-tag [value]="prompt().category.name" severity="secondary" />
+    <div class="flex gap-2 align-items-center">
+      <p-button (onClick)="up()" size="small" icon="pi pi-thumbs-up" severity="secondary" />
+      <span id="vote">{{ prompt().score }}</span>
+      <p-button (onClick)="down()" size="small" icon="pi pi-thumbs-down" severity="secondary" />
+    </div>
+  </div>
+</p-card>

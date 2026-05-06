@@ -1,0 +1,15 @@
+img {
+  width: 36px;
+  height: 36px;
+}
+
+.navbar-logo {
+  text-decoration: none;
+  color: inherit;
+  font-size: 1.4rem;
+  font-weight: 600;;
+}
+
+.navbar-shadow {
+  box-shadow: 0 4px 6px -2px var(--p-primary-500);
+}
