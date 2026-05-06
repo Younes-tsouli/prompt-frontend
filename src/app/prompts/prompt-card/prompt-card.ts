@@ -12,7 +12,7 @@ import { TagModule } from 'primeng/tag';
   styleUrl: './prompt-card.scss',
 })
 export class PromptCard {
-  prompt = input.required<Prompt>(); // c'est un signal
+  prompt = input.required<Prompt>(); // c'est un signal (comme les props de React)
   up() {
     this.prompt().score += 1;
   }
